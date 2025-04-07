@@ -3,10 +3,12 @@
 import sys, time
 from cgol import random_state, next_state, render
 
-if len(sys.argv) > 1:
+if len(sys.argv) == 2:
     n = int(sys.argv[1])
+elif len(sys.argv) == 1:
+    n = 15
 else:
-    n = 10
+    print("Invalid Command")
 
 state = random_state(n, n)
 while True:
@@ -15,4 +17,4 @@ while True:
     if state == nextstate:
         break
     state = nextstate
-    time.sleep(0.25)
+    time.sleep(0.2)
